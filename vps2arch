@@ -157,6 +157,7 @@ configure_bootloader() {
 		sed -i.bak 's/use_lvmetad = 1/use_lvmetad = 0/g' /etc/lvm/lvm.conf
 	fi
 
+	mkdir -p /boot/grub
 	if [ "$bootloader" = "grub" ]; then
 		# If you are still using eth* as interface name, disable "strange" ifnames
 		grep -q '^[[:space:]]*eth' /proc/net/dev && \
